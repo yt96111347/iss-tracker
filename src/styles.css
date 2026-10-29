@@ -1,0 +1,154 @@
+/* prompt/course.html 화면 스타일 기반 */
+:root{
+  --accent:#4f46e5;
+  --accent2:#06b6d4;
+  --text:#1e293b;
+  --muted:#64748b;
+  --bg:#f8fafc;
+  --card:#ffffff;
+  --border:#e2e8f0;
+}
+*{box-sizing:border-box;}
+body{
+  margin:0;
+  font-family:'Segoe UI','Pretendard','Apple SD Gothic Neo',sans-serif;
+  background:var(--bg);
+  color:var(--text);
+  line-height:1.7;
+}
+a{color:var(--accent);}
+.topbar{
+  position:sticky;
+  top:0;
+  z-index:1100;
+  background:rgba(255,255,255,.85);
+  backdrop-filter:blur(8px);
+  border-bottom:1px solid var(--border);
+  padding:14px 24px;
+  display:flex;
+  align-items:center;
+  justify-content:space-between;
+}
+.topbar .brand{font-weight:800;color:var(--accent);font-size:15px;}
+.topbar nav a{
+  margin-left:18px;
+  font-size:14px;
+  color:var(--muted);
+  text-decoration:none;
+  font-weight:600;
+}
+.topbar nav a:hover{color:var(--accent);}
+header.hero{
+  background:linear-gradient(135deg,#4f46e5,#06b6d4);
+  color:#fff;
+  padding:64px 24px 56px;
+  text-align:center;
+}
+header.hero .badge{
+  display:inline-block;
+  padding:6px 16px;
+  border-radius:999px;
+  background:rgba(255,255,255,.18);
+  font-size:13px;
+  margin-bottom:16px;
+}
+header.hero h1{margin:0 0 10px;font-size:clamp(26px,4.5vw,38px);}
+header.hero p{
+  margin:0 auto;
+  max-width:600px;
+  color:rgba(255,255,255,.9);
+  font-size:15px;
+}
+main{max-width:1080px;margin:0 auto;padding:48px 24px 100px;}
+section{margin-bottom:64px;scroll-margin-top:70px;}
+.section-head{display:flex;align-items:center;gap:14px;margin-bottom:24px;}
+.section-head .chip{
+  background:var(--accent);
+  color:#fff;
+  font-weight:800;
+  font-size:13px;
+  padding:6px 12px;
+  border-radius:8px;
+  white-space:nowrap;
+}
+.section-head h2{margin:0;font-size:24px;}
+.card{
+  background:var(--card);
+  border:1px solid var(--border);
+  border-radius:16px;
+  padding:26px 28px;
+  margin-bottom:20px;
+  box-shadow:0 4px 16px rgba(15,23,42,.04);
+}
+.card h3{
+  margin-top:0;
+  font-size:17px;
+  color:var(--accent);
+  display:flex;
+  align-items:center;
+  gap:8px;
+}
+.card p, .card li{color:#334155;font-size:15px;}
+.muted{color:var(--muted) !important;font-size:13.5px !important;margin:12px 0 0;}
+table{width:100%;border-collapse:collapse;font-size:14.5px;margin-top:8px;}
+th,td{text-align:left;padding:10px 12px;border-bottom:1px solid var(--border);}
+th{color:var(--muted);font-weight:700;font-size:13px;text-transform:uppercase;letter-spacing:.4px;width:220px;}
+.status-grid{
+  display:grid;
+  grid-template-columns:repeat(auto-fit,minmax(170px,1fr));
+  gap:12px;
+  margin-top:8px;
+}
+.status{padding:12px 14px;border-radius:10px;font-size:13.5px;}
+.status b{display:block;font-size:20px;margin-bottom:2px;}
+.status.s2{background:#ecfdf5;color:#047857;}
+.status.s3{background:#eff6ff;color:#1d4ed8;}
+.status.s4{background:#fffbeb;color:#b45309;}
+.status.s5{background:#fef2f2;color:#b91c1c;}
+footer{
+  text-align:center;
+  padding:30px;
+  color:var(--muted);
+  font-size:13px;
+  border-top:1px solid var(--border);
+}
+
+/* 지도 */
+.map-card{padding:12px;}
+.map{height:520px;width:100%;border-radius:12px;background:#0f172a;}
+.map-footer{
+  display:flex;
+  justify-content:space-between;
+  align-items:center;
+  flex-wrap:wrap;
+  gap:10px;
+  padding:12px 8px 2px;
+  font-size:13.5px;
+  color:var(--muted);
+}
+.legend{display:flex;gap:20px;}
+.legend span{display:flex;align-items:center;gap:8px;}
+.legend .line{display:inline-block;width:34px;height:0;}
+.legend .line.actual{border-top:3px solid var(--accent);}
+.legend .line.inferred{border-top:3px dashed var(--accent2);}
+.follow{display:flex;align-items:center;gap:6px;cursor:pointer;font-weight:600;}
+.iss-marker{background:none;border:none;filter:drop-shadow(0 2px 4px rgba(15,23,42,.45));}
+
+/* 속도 */
+.speed{display:flex;align-items:baseline;gap:10px;}
+.speed-value{
+  font-size:44px;
+  font-weight:800;
+  background:linear-gradient(135deg,#4f46e5,#06b6d4);
+  -webkit-background-clip:text;
+  background-clip:text;
+  color:transparent;
+  font-variant-numeric:tabular-nums;
+}
+.speed-unit{font-size:16px;color:var(--muted);font-weight:700;}
+
+@media (max-width:680px){
+  .map{height:380px;}
+  th{width:auto;}
+  .topbar nav a{margin-left:12px;}
+}
